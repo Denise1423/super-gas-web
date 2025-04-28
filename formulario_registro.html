@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Viajes - Super Gas</title>
+    <style>
+        /* General */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1E3A5F; /* Azul marino */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Círculos flotantes */
+        .circles {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.1); /* Translúcido */
+            border-radius: 50%;
+            animation: float 10s infinite ease-in-out;
+        }
+        .circle1 {
+            top: 10%;
+            left: 20%;
+        }
+        .circle2 {
+            top: 50%;
+            left: 75%;
+            width: 150px;
+            height: 150px;
+        }
+        .circle3 {
+            top: 85%;
+            left: 10%;
+            width: 120px;
+            height: 120px;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Container */
+        .container {
+            background: rgba(255, 255, 255, 0.1); /* Translúcido */
+            border-radius: 15px;
+            padding: 20px 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            color: #000;
+        }
+
+        header {
+            background-color: rgba(0, 59, 99, 0.8); /* Fondo translúcido */
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            width: 100%;
+            text-align: left;
+            font-weight: bold;
+            color: #FFF; /* Texto blanco */
+            margin-top: 15px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0.5); /* Fondo translúcido */
+            color: #000;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007ACC;
+            color: white;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background-color: #005F99;
+        }
+
+        footer {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <!-- Círculos flotantes -->
+    <div class="circles circle1"></div>
+    <div class="circles circle2"></div>
+    <div class="circles circle3"></div>
+
+    <div class="container">
+        <header>
+            <h1>🚚 Super Gas - Registro de Viajes</h1>
+        </header>
+        <form id="formulario">
+            <label for="transportadora">Transportadora:</label>
+            <select id="transportadora" required>
+                <option value="">Seleccionar...</option>
+                <option value="Aton">Aton (Mexicana)</option>
+                <option value="Windstar">Windstar (Americana)</option>
+            </select>
+
+            <label for="chofer">Nombre del Chofer:</label>
+            <input type="text" id="chofer" placeholder="Ingrese nombre completo" required>
+
+            <label for="unidad">Número de Unidad (Tracto/Pipa):</label>
+            <input type="text" id="unidad" placeholder="Ej. 501, 1801" required>
+
+            <label for="origen">Origen:</label>
+            <input type="text" id="origen" placeholder="Ciudad de origen" required>
+
+            <label for="destino">Destino:</label>
+            <input type="text" id="destino" placeholder="Ciudad destino" required>
+
+            <label for="hora_llegada">Hora de Llegada:</label>
+            <input type="time" id="hora_llegada" required>
+
+            <label for="hora_salida">Hora de Salida:</label>
+            <input type="time" id="hora_salida" required>
+
+            <label for="producto">Producto:</label>
+            <select id="producto" required>
+                <option value="">Seleccionar producto...</option>
+                <option value="Gas LP">Gas LP</option>
+                <option value="Isobutano">Isobutano</option>
+            </select>
+
+            <button type="submit">Registrar Viaje</button>
+        </form>
+        <footer>
+            Super Gas © 2025
+        </footer>
+    </div>
+</body>
+</html>
